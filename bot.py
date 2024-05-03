@@ -1,4 +1,5 @@
-from googletrans import Translator
+
+from googletrans import Translator   # pip install googletrans==4.0.0-rc1
 import random
 
 translator = Translator()
@@ -19,20 +20,18 @@ You can end this conversation at any time by typing '잘가'
 After typing each answer, press 'enter'
 How are you today?"""
 
-first_message = translate_to_korean(first_message)
-print(first_message)
+print(translate_to_korean(first_message))
 
 
 while True:
     # wait for the user to enter some text
     user_input = input("> ")
     if user_input== "잘가":
-        # if they typed in 'bye' (or even BYE, ByE, byE etc.), break out of the loop
+        # if they typed in '잘가', break out of the loop
         break
     else:
         response = translate_to_korean(random.choices(random_responses)[0])
     print(response)
 
 goodbye_message = "It was nice talking to you, goodbye!"
-goodbye_message = translate_to_korean(goodbye_message)
-print(goodbye_message)
+print(translate_to_korean(goodbye_message))
